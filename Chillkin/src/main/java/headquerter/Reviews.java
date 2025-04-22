@@ -1,46 +1,65 @@
 package headquerter;
 
 public class Reviews {
-	String r_code;
+
+	String r_Code;
 	String id;
 	String detail;
 	String answer;
 	String title;
+	String r_Date;
 	
-	public Reviews(String r_code, String id, String title, String detail) {
-		this.r_code = r_code;
-		this.id = id;
-		this.title = title;
-		this.detail = detail;
-	}
 	
-	public Reviews(String r_code, String id,String title, String detail,String answer) {
-		this.r_code = r_code;
+	public Reviews(String r_Code, String id, String detail, String answer, String title, String r_Date) {
+		super();
+		this.r_Code = r_Code;
 		this.id = id;
 		this.detail = detail;
-		this.title = title;
 		this.answer = answer;
+		this.title = title;
+		this.r_Date = r_Date;
 	}
-	
+
+
 	public String getR_code() {
-		return r_code;
+		return r_Code;
 	}
+
+
 	public String getId() {
 		return id;
 	}
+
+
 	public String getDetail() {
 		return detail;
 	}
+
+
+	public String getAnswer() {
+		return answer;
+	}
+
+
 	public String getTitle() {
 		return title;
 	}
 	
+	public String getR_date() {
+		return r_Date;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Reviews [r_code=" + r_code + ", id=" + id +", title=" + title + ", detail=" + detail + "]";
+		return "Reviews [r_Code=" + r_Code + ", id=" + id + ", detail=" + detail + ", answer=" + answer + ", title="
+				+ title + ", r_Date=" + r_Date + "]";
 	}
-//	
-//	public String toStringAll() {
-//		return "Reviews [r_code=" + r_code + ", id=" + id + ", detail=" + detail + ", answer=" + answer + "]";
-//	}
+
+
+	
+
+	
+	
+	
 }

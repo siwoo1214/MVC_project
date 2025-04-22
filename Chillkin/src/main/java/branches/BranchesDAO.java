@@ -9,10 +9,10 @@ import java.util.ArrayList;
 
 public class BranchesDAO {
 
-	String driver="oracle.jdbc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="system";
-	String password="1234";
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@localhost:1521:testdb";
+	String user = "scott";
+	String password = "tiger";
 
 	public Connection dbcon() {
 
@@ -35,6 +35,31 @@ public class BranchesDAO {
 
 		return con;
 	}
+	
+	public boolean checkLogin(String branchId, String pw) {
+		Connection con = dbcon();
+		String sql = "SELECT * FROM Branches WHERE Branch_Id = ? AND Pw = ?";
+	    boolean result = false;
+	    
+	    try {
+	        PreparedStatement pst = con.prepareStatement(sql);
+	        pst.setString(1, branchId);
+	        pst.setString(2, pw);
+	        
+	        ResultSet rs = pst.executeQuery();
+
+	        result = rs.next();
+	        
+	        rs.close();
+	        pst.close();
+	        con.close();
+	        
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return result;
+	}
+
 
 	public ArrayList<Branches> selectBranches() {
 		Connection con = dbcon();

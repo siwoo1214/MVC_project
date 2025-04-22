@@ -9,9 +9,9 @@ import java.sql.SQLException;
 public class UserDAO {
 	
 	String driver="oracle.jdbc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="system";
-	String password="1234";
+	String url="jdbc:oracle:thin:@localhost:1521:testdb";
+	String user="scott";
+	String password="tiger";
 	
 	
 	private Connection getConnection() {

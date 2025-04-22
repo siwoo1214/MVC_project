@@ -8,10 +8,12 @@
 </head>
 <body>
 <form action="/Chillkin/signup" method="post">
+	
     비밀번호: <input type="text" name="pw"><br>
     주소: <input type="text" name="address"><br>
     전화번호: <input type="text" name="tel" placeholder="010-XXXX-YYYY"><br>
     <input type="submit" value="회원가입">
+
 </form>
 </body>
 </html>

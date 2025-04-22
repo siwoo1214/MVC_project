@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class B_I_OrderDAO {
-	String driver = "oracle.jdbc.driver.OracleDriver" ;
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="system";
-	String password="1234";
+	String driver="oracle.jdbc.driver.OracleDriver";
+	String url="jdbc:oracle:thin:@localhost:1521:testdb";
+	String user="scott";
+	String password="tiger";
 	
 	private Connection dbCon() {		
 		Connection con = null;
@@ -38,12 +38,14 @@ public class B_I_OrderDAO {
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next()) {
-				String b_code = rs.getString(1);
-				String i_code = rs.getString(2);
-				String cnt_ = rs.getString(3);
+				String b_i_code = rs.getString(1);
+				String b_i_date = rs.getString(2);
+				String b_code = rs.getString(3);
+				String i_code = rs.getString(4);
+				String cnt_ = rs.getString(5);
 				int cnt = Integer.parseInt(cnt_); 
 				
-				list.add(new B_I_Order(b_code,i_code,cnt)); 
+				list.add(new B_I_Order(b_i_code, b_i_date, b_code,i_code,cnt)); 
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -64,12 +66,14 @@ public class B_I_OrderDAO {
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next()) {
-				String b_code = rs.getString(1);
-				String i_code = rs.getString(2);
-				String cnt_ = rs.getString(3);
+				String b_i_code = rs.getString(1);
+				String b_i_date = rs.getString(2);
+				String b_code = rs.getString(3);
+				String i_code = rs.getString(4);
+				String cnt_ = rs.getString(5);
 				int cnt = Integer.parseInt(cnt_); 
 				
-				list.add(new B_I_Order(b_code,i_code,cnt)); 
+				list.add(new B_I_Order(b_i_code, b_i_date,b_code,i_code,cnt)); 
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -91,12 +95,14 @@ public class B_I_OrderDAO {
 			ResultSet rs = pst.executeQuery();
 			
 			while(rs.next()) {
-				String b_code = rs.getString(1);
-				String i_code = rs.getString(2);
-				String cnt_ = rs.getString(3);
+				String b_i_code = rs.getString(1);
+				String b_i_date = rs.getString(2);
+				String b_code = rs.getString(3);
+				String i_code = rs.getString(4);
+				String cnt_ = rs.getString(5);
 				int cnt = Integer.parseInt(cnt_);
 				
-				list.add(new B_I_Order(b_code,i_code,cnt));
+				list.add(new B_I_Order(b_i_code, b_i_date, b_code,i_code,cnt));
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

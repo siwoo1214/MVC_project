@@ -6,29 +6,40 @@
 <head>
 <meta charset="UTF-8">
 <title>재고 관리</title>
-<link href="/Chillkin/css/stock.css" rel="stylesheet" type="text/css">
+    <link href="/Chillkin/css/common-table.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-	<h2>재고 관리 페이지</h2>
-	<a href="/Chillkin/h_main">본사 홈페이지</a>
-	
-	<table>
-		<tr>
-			<th>식재료 코드</th>
-			<th>식재료</th>
-			<th>수량</th>
-			<th>가격</th>
-		</tr>
-		
-		<c:forEach var="h" items="${list}">
+<div class="main-header">
+    <div class="header-center">
+        <img class="logo" src="img/logo.png" alt="로고">
+        <span class="header-title">ChillKin 콤파니</span>
+    </div>
+</div>
+<img class="chicken-img" src="img/chillkinguy.png" alt="닭 이미지">
+<div class="main-body">
+    <h2>재고 관리</h2>
+    <table>
+        <thead>
+        <tr>
+            <th>상품코드</th>
+            <th>상품명</th>
+            <th>수량</th>
+            <th>상품가격</th>
+        </tr>
+        </thead>
+        <tbody>
+        <c:forEach var="h" items="${list}">
+        
 			<tr>
 				<td>${h.getCode()}</td>
 				<td>${h.getName()}</td>
 				<td>${h.getCnt()}</td>
 				<td class="price">${h.getPrice()}</td>
 			</tr>
+			
 		</c:forEach>
-	</table>
+		</tbody>
+	</table>	
 	
 	<script type="text/javascript">
 		document.addEventListener("DOMContentLoaded", function () {
@@ -39,5 +50,8 @@
 		    });
 		});
 	</script>
-</body>
+        </div>
+        <a href="/Chillkin/h_main">홈페이지 돌아가기</a>
+        </body>
 </html>
+

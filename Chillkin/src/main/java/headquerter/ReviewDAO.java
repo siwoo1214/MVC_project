@@ -8,10 +8,10 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 public class ReviewDAO {
-	String driver = "oracle.jdbc.driver.OracleDriver" ;
-	String url="jdbc:oracle:thin:@localhost:1521:xe";
-	String user="system";
-	String password="1234";
+	String driver="oracle.jdbc.driver.OracleDriver";
+	String url="jdbc:oracle:thin:@localhost:1521:testdb";
+	String user="scott";
+	String password="tiger";
 	
 	private Connection dbCon() {		
 		Connection con = null;
@@ -39,10 +39,12 @@ public class ReviewDAO {
 			while(rs.next()) {
 				String r_code = rs.getString(1);
 				String id = rs.getString(2);
-				String title = rs.getString(5);
-				String detail = rs.getString(3);
+				String title = rs.getString(3);
+				String detail = rs.getString(5);
+				String r_date = rs.getString(4);
+				String answer = rs.getString(6);
 				
-				list.add(new Reviews(r_code,id,title,detail)); 
+				list.add(new Reviews(r_code,id,title,detail,r_date, answer)); 
 			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block

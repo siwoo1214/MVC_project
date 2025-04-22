@@ -25,6 +25,12 @@ public class ReviewService {
 			o.put("ID", review.getId());
 			o.put("Title", review.getTitle());
 			o.put("Detail", review.getDetail());
+			if(review.getAnswer()!=null) {
+				o.put("Answer", review.getAnswer());
+			}else {
+				review.answer=null;
+			}
+			o.put("R_DATE",review.getR_date());
 			arr.put(o);
 		}
 		return arr;

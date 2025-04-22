@@ -10,7 +10,7 @@
 <body>
 	<h1>본사 홈페이지</h1>
 	<div class="nav">
-		<a href="/Chillkin/h_stockmanage">장고재고관리</a>
+		<a href="/Chillkin/h_stockmanage">창고재고관리</a>
 		<a href="/Chillkin/h_orderingInfo">발주 정보</a>
 		<a href="/Chillkin/h_branchesInfo">가맹점 관리</a>	
 		<a href="/Chillkin/reviewPrint">가맹점 문의사항</a>	
