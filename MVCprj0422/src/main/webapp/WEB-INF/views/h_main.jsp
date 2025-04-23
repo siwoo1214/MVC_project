@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <title>ChillKin 콤파니</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/MVCprj0421/css/main.css">
+    <link rel="stylesheet" href="/MVCprj0422/css/main.css">
 </head>
 <body>
 <% List<Reviews> rlist = (List<Reviews>)request.getAttribute("rlist"); %>

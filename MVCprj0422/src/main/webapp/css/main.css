@@ -130,3 +130,14 @@
             .sidebar { width: 100vw; height: 180px; }
             .main { padding: 18px 8px 18px 8px;}
         }
+
+        a{
+            color: #292926;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .sidebar-menu>a{
+            color: #292926;
+            text-decoration: underline;
+        }

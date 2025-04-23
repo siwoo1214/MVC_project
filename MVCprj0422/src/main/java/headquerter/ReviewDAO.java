@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ReviewDAO {
-	String driver="oracle.jdbc.driver.OracleDriver";
-	String url="jdbc:oracle:thin:@localhost:1521:testdb";
-	String user="scott";
-	String password="tiger";
+	String driver = "oracle.jdbc.driver.OracleDriver";
+	String url = "jdbc:oracle:thin:@localhost:1521:xe";
+	String user = "system";
+	String password = "1234";
 	
 	private Connection dbCon() {		
 		Connection con = null;
@@ -29,9 +29,26 @@ public class ReviewDAO {
 		return con;
 	}
 	
+	
+	private void docommit(){
+		Connection con = dbCon();
+		String sql = "commit";
+		PreparedStatement pst;
+		try {
+			pst = con.prepareStatement(sql);
+			pst.executeQuery();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	
 	public ArrayList<Reviews> allReviews(){
 		ArrayList<Reviews> list = new ArrayList<>();
 		Connection con = dbCon();
+		ReviewDAO r = new ReviewDAO();
+		r.docommit();
 		String sql = "SELECT r_code, id, title, detail, answer, r_date FROM Reviews";
 		
 		try {
@@ -90,8 +107,10 @@ public class ReviewDAO {
 	public List<Reviews> getPagedList(PagingVO paging){
 		List<Reviews> pagelist = new ArrayList<>();
 		ReviewDAO dao = new ReviewDAO();
+		ReviewDAO r = new ReviewDAO();
+		r.docommit();
 		
-		String sql = "SELECT * FROM ("
+		String sql = "commit; SELECT * FROM ("
 				+ "    SELECT a.*, ROWNUM rn"
 				+ "    FROM ("
 				+ "        SELECT r_code, id, title, detail, answer, r_date"
@@ -137,8 +156,10 @@ public class ReviewDAO {
 	}
 	
 	public int getTotalCount() {
-		String sql = "select Count(*) from reviews";
+		String sql = "commit; select Count(*) from reviews";
 		ReviewDAO dao = new ReviewDAO();
+		ReviewDAO r = new ReviewDAO();
+		r.docommit();
 		
 		Connection con = dao.dbCon();
 		try {

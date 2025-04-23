@@ -50,8 +50,10 @@
 		    });
 		});
 	</script>
+	<div class="go-to-home">
+		<a href="<%= request.getContextPath() %>/h_main">본사 홈페이지</a>
+	</div>
         </div>
-        <a href="<%= request.getContextPath() %>/h_main">홈페이지 돌아가기</a>
         </body>
 </html>
 

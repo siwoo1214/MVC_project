@@ -69,8 +69,10 @@
 				<th>작성일자</th>
 			</tr>
 		</table>
+		<div class="go-to-home">
+			<a href="<%= request.getContextPath() %>/h_main">홈페이지 돌아가기</a>
+		</div>
 	</div>
-	<a href="<%= request.getContextPath() %>/h_main">홈페이지 돌아가기</a>
     </main>
 	
 </body>

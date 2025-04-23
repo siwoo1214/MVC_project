@@ -109,3 +109,17 @@ tr:hover td {
         right: 20px;
     }
 }
+
+.go-to-home{
+    background-color: beige;
+    border-radius: 10px;
+    width: 100px;
+    padding: 5px;
+    text-align: center;
+    margin: 0 auto;
+}
+
+.go-to-home>a{
+    text-decoration: none;
+    color: #333;
+}

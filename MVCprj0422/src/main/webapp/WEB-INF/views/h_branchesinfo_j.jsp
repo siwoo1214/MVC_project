@@ -40,8 +40,10 @@
 			</c:forEach>
         </tbody>
     </table>
+    <div class="go-to-home">
+    	<a href="<%= request.getContextPath() %>/h_main">본사 홈페이지</a><br>
+    </div>
 </div>
-	<a href="<%= request.getContextPath() %>/h_main">본사 홈페이지</a><br>
 </body>
 </html>
 
